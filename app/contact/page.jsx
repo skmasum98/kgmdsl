@@ -1,0 +1,220 @@
+// src/app/contact/page.js
+'use client';
+
+import { useState } from 'react';
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here (e.g., send to API)
+    console.log('Form submitted:', formData);
+    alert('Thank you for your message. We will contact you soon!');
+    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  return (
+    <main>
+      {/* Hero Section */}
+      <section className="bg-blue-900 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+          <p className="text-xl">Get in touch with our team today</p>
+        </div>
+      </section>
+
+      {/* Contact Content */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="text-2xl mr-4">🏢</div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Registered Office</h3>
+                    <p className="text-gray-700">
+                      18, Oluranti Adedeji Street, Egan, Igando,<br />
+                      Lagos State, Nigeria
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="text-2xl mr-4">📞</div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Phone</h3>
+                    <p className="text-gray-700">+234 XXX XXX XXXX</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="text-2xl mr-4">✉️</div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Email</h3>
+                    <p className="text-gray-700">info@kgmultidynamic.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="text-2xl mr-4">🕒</div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Business Hours</h3>
+                    <p className="text-gray-700">
+                      Monday - Friday: 8:00 AM - 5:00 PM<br />
+                      Saturday: 9:00 AM - 1:00 PM<br />
+                      Sunday: Closed
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div>
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-2xl font-semibold mb-6">Send us a Message</h3>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                        Subject *
+                      </label>
+                      <select
+                        id="subject"
+                        name="subject"
+                        required
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      >
+                        <option value="">Select a subject</option>
+                        <option value="petroleum">Petroleum Products</option>
+                        <option value="machinery">Machinery Hire</option>
+                        <option value="import-export">Import & Export</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="construction">Construction Materials</option>
+                        <option value="general">General Inquiry</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                      Message *
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8">Our Location</h2>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg">
+              {/* Replace with actual map embed */}
+              <div className="w-full h-96 bg-gray-300 rounded-lg flex items-center justify-center">
+                <p className="text-gray-600">Google Maps Embed will be here</p>
+                {/* Actual embed code: */}
+                {/* <iframe
+                  src="https://www.google.com/maps/embed?pb=..."
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
