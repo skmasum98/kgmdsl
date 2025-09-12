@@ -1,6 +1,7 @@
 // src/app/contact/page.js
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -30,12 +31,35 @@ export default function Contact() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-blue-900 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl">Get in touch with our team today</p>
-        </div>
-      </section>
+       <section className="relative min-h-[400px] flex items-center justify-center overflow-hidden">
+              {/* Background Image */}
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src="/nigeria.webp"
+                  alt="KG Multi Dynamic Services"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="100vw"
+                />
+                {/* Pattern overlay */}
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4yIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')]"></div>
+                <div className="absolute inset-0 bg-blue-900/70"></div>
+              </div>
+      
+              {/* Content */}
+              <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                  Contact Us
+                </h1>
+                <p className="text-xl md:text-2xl max-w-3xl mb-8 mx-auto">
+                  Get in touch with our team today
+                </p>
+                  <div className="w-20 h-1 bg-blue-400 mx-auto"></div>
+              </div>
+            </section>
+
+      
 
       {/* Contact Content */}
       <section className="py-16">
@@ -199,17 +223,18 @@ export default function Contact() {
             <div className="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg">
               {/* Replace with actual map embed */}
               <div className="w-full h-96 bg-gray-300 rounded-lg flex items-center justify-center">
-                <p className="text-gray-600">Google Maps Embed will be here</p>
+               
                 {/* Actual embed code: */}
-                {/* <iframe
-                  src="https://www.google.com/maps/embed?pb=..."
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15855.323594603904!2d3.220331630334427!3d6.543026482128153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b856b30c2bc4b%3A0x2958bfb827cc756f!2s18%20Oluranti%20Adedeji%20St%2C%20Ijegun%2C%20Lagos%20102213%2C%20Lagos%2C%20Nigeria!5e0!3m2!1sen!2sbd!4v1757680017589!5m2!1sen!2sbd"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                ></iframe> */}
+                ></iframe>
+               
               </div>
             </div>
           </div>

@@ -1,20 +1,38 @@
 // src/app/services/page.js
 import ServicesGrid from '@/components/ServicesGrid';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Services() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-blue-900 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-            Comprehensive solutions across multiple sectors, delivering excellence and reliability 
-            to clients throughout Nigeria and beyond.
-          </p>
-        </div>
-      </section>
+      <section className="relative min-h-[400px] flex items-center justify-center overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/nigeria.webp"
+      alt="KG Multi Dynamic Services"
+      fill
+      className="object-cover"
+      priority
+      sizes="100vw"
+    />
+    {/* Dark overlay for better text readability */}
+    <div className="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+    <h1 className="text-4xl md:text-5xl font-bold mb-6">
+      Our Services
+    </h1>
+    <p className="text-xl md:text-2xl max-w-3xl mx-auto">
+      Comprehensive solutions across multiple sectors, delivering excellence and reliability 
+      to clients throughout Nigeria and beyond.
+    </p>
+  </div>
+</section>
 
       {/* Services Grid Section */}
       <section className="py-16">

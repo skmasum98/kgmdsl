@@ -7,21 +7,37 @@ export default function About() {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-20 overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-300 rounded-full blur-3xl"></div>
+
+      <section className="relative min-h-[400px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/nigeria.webp"
+            alt="KG Multi Dynamic Services"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          {/* Pattern overlay */}
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4yIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')]"></div>
+          <div className="absolute inset-0 bg-blue-900/70"></div>
         </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl font-bold mb-6">About KG Multi Dynamic</h1>
-          <p className="text-xl max-w-2xl mx-auto mb-8">
+
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            About KG Multi Dynamic
+          </h1>
+          <p className="text-xl md:text-2xl max-w-3xl mb-8 mx-auto">
             Building Nigeria's future through diversified excellence and unwavering integrity
           </p>
-          <div className="w-20 h-1 bg-blue-400 mx-auto"></div>
+            <div className="w-20 h-1 bg-blue-400 mx-auto"></div>
         </div>
       </section>
+
+
+      
 
       {/* Content Section */}
       <section className="py-20">

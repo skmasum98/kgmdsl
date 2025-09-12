@@ -40,7 +40,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="px-4 py-2 w-full text-gray-800 focus:outline-none"
+                  className="px-4 py-2 w-full bg-blue-500 text-gray-800 focus:outline-none"
                 />
                 <button className="bg-blue-500 hover:bg-blue-400 px-4 py-2 transition-colors flex items-center">
                   <FaArrowRight />
@@ -163,25 +163,57 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-blue-700 relative z-10">
-        <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p className="text-blue-200 mb-4 md:mb-0">
-            © {new Date().getFullYear()} KG Multi Dynamic Service Limited. All rights reserved.
-          </p>
-          <div className="flex space-x-6">
-            {[
-              { href: "/privacy", label: "Privacy Policy" },
-              { href: "/terms", label: "Terms of Service" },
-              { href: "/legal", label: "Legal" }
-            ].map((link, i) => (
-              <Link
-                key={i}
-                href={link.href}
-                className="text-blue-200 hover:text-white transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+      <div className="border-t border-blue-700 relative z-10 bg-blue-900">
+        <div className="container mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm">
+            <div className="flex flex-col md:flex-row items-center gap-4 mb-4 md:mb-0">
+              <p className="text-blue-200">
+                © {new Date().getFullYear()} KG Multi Dynamic Service Limited. All rights reserved.
+              </p>
+              <div className="hidden md:block w-px h-4 bg-blue-600"></div>
+              <div className="text-blue-300 text-xs">
+                Developed by{' '}
+                <a
+                  href="https://thewebpal.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-200 hover:text-white transition-colors font-medium underline"
+                >
+                  Thewebpal
+                </a>
+              </div>
+            </div>
+            
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex space-x-6">
+                {[
+                  { href: "/privacy", label: "Privacy Policy" },
+                  { href: "/terms", label: "Terms of Service" },
+                  { href: "/legal", label: "Legal" }
+                ].map((link, i) => (
+                  <Link
+                    key={i}
+                    href={link.href}
+                    className="text-blue-200 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              
+              {/* Mobile version of development credit */}
+              <div className="md:hidden text-blue-300 text-xs mt-4 md:mt-0">
+                Developed by{' '}
+                <a
+                  href="https://thewebpal.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-200 hover:text-white transition-colors font-medium underline"
+                >
+                  Thewebpal
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
