@@ -50,9 +50,10 @@ const Header = () => {
   ];
 
   const servicesLinks = [
+    { href: '/services/import-export', label: 'Import & Export' },
     { href: '/services/petroleum', label: 'Petroleum Products' },
     { href: '/services/machinery', label: 'Machinery Hire' },
-    { href: '/services/import-export', label: 'Import & Export' },
+    
     { href: '/services/real-estate', label: 'Real Estate' },
     { href: '/services/construction', label: 'Construction Materials' },
   ];
