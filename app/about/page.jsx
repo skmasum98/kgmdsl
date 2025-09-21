@@ -1,4 +1,5 @@
 // src/app/about/page.js
+import VideoGallery from '@/components/VideoGallery';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaBuilding, FaUsers, FaFileAlt, FaAward, FaHandshake, FaChartLine } from 'react-icons/fa';
@@ -131,57 +132,79 @@ export default function About() {
           </div>
         </div>
       </section>
+      
+      {/* Video Section */}
+      <section className="py-12 bg-white">
+        <VideoGallery />
+      </section>
 
       {/* Legal Foundation Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-4">
-                <FaFileAlt className="mr-2" />
-                <span>Legal Foundation</span>
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Corporate Compliance & Governance</h2>
-              <p className="text-xl text-gray-600">
-                Built on a foundation of legal integrity and regulatory compliance
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                <strong>KG Multi Dynamic Service Limited</strong> is a duly registered company under 
-                the <strong>Companies and Allied Matters Act, 2020 (CAMA)</strong> of the Federal 
-                Republic of Nigeria. We are a private company limited by shares, committed to 
-                transparency, corporate governance, and regulatory compliance.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {[
-                  { title: "Company Status", value: "Private Limited Company" },
-                  { title: "Liability", value: "Limited by Shares" },
-                  { title: "Share Capital", value: "₦1,000,000 (One Million Naira)" },
-                  { title: "Registration", value: "Corporate Affairs Commission (CAC)" }
-                ].map((item, index) => (
-                  <div key={index} className="bg-blue-50 p-5 rounded-lg border border-blue-100">
-                    <h3 className="font-semibold text-blue-900 mb-2">{item.title}</h3>
-                    <p className="text-gray-700">{item.value}</p>
-                  </div>
-                ))}
-              </div>
+     <section className="py-20">
+  <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-4">
+          <FaFileAlt className="mr-2" />
+          <span>Legal Foundation</span>
+        </div>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          Corporate Compliance & Governance
+        </h2>
+        <p className="text-xl text-gray-600">
+          Built on a foundation of legal integrity and regulatory compliance
+        </p>
+      </div>
 
-              <div className="text-center">
-                <Link 
-                  href="/legal" 
-                  className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                >
-                  <FaFileAlt className="mr-2" />
-                  View Our Certification Documents
-                </Link>
+      {/* Two-column layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        
+        {/* Left side - Director Image */}
+        <div className="flex justify-center">
+          <img 
+            src="/images/certificate.png" 
+            alt="Company Director holding certificate" 
+            className="rounded-2xl shadow-lg border border-gray-200 max-h-[450px] object-cover"
+          />
+        </div>
+
+        {/* Right side - Compliance details */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <strong>KG Multi Dynamic Service Limited</strong> is a duly registered company under 
+            the <strong>Companies and Allied Matters Act, 2020 (CAMA)</strong> of the Federal 
+            Republic of Nigeria. We are a private company limited by shares, committed to 
+            transparency, corporate governance, and regulatory compliance.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            {[
+              { title: "Company Status", value: "Private Limited Company" },
+              { title: "Liability", value: "Limited by Shares" },
+              { title: "Share Capital", value: "₦1,000,000 (One Million Naira)" },
+              { title: "Registration", value: "Corporate Affairs Commission (CAC)" }
+            ].map((item, index) => (
+              <div key={index} className="bg-blue-50 p-5 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-900 mb-2">{item.title}</h3>
+                <p className="text-gray-700">{item.value}</p>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link 
+              href="/legal" 
+              className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            >
+              <FaFileAlt className="mr-2" />
+              View Our Certification Documents
+            </Link>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Team Section */}
       <section className="py-20 bg-gray-50">
